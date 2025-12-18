@@ -1,4 +1,4 @@
-# NaijaFit Cal AI: Personalized Nutrition & Global Fitness
+# NaijaFit Fitness AI: Personalized Nutrition & Global Fitness
 
 A sophisticated web application designed to help users achieve weight reduction through AI-powered Nigerian food recognition and personalized workout routines.
 
