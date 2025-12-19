@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><link rel="stylesheet" href="style.css"></head>
 <body>
-    <div class="container">
-        <h1>Dashboard</h1>
-        <div class="card" id="workout-status">Loading Workout...</div>
-        
-        <div class="card">
-            <h3>Analyze Food</h3>
-            <input type="file" onchange="analyzeFoodImage(this.files[0])">
-            <p>Result: <span id="cal-result" class="gold-text">---</span></p>
-            <p>Portion Size: <span id="portion-status">---</span></p>
-        </div>
-        
-        <nav><a href="journey.html">View My Journey</a> | <a href="settings.html">Settings</a></nav>
+    <div class="dashboard-layout">
+        <aside class="glass" style="margin: 20px; padding: 40px; display: flex; flex-direction: column; gap: 30px;">
+            <h2 style="color: var(--gold);">CAL AI</h2>
+            <nav style="display: flex; flex-direction: column; gap: 20px;">
+                <a href="#" class="gold-text">Dashboard</a>
+                <a href="journey.html" style="color: white; text-decoration: none;">My Journey</a>
+                <a href="settings.html" style="color: white; text-decoration: none;">Profile</a>
+            </nav>
+        </aside>
+
+        <main style="padding: 40px; overflow-y: auto;">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                <h1>Good Morning, <span class="gold-text">Adejare</span></h1>
+                <div id="workout-status" class="glass" style="padding: 10px 20px; font-weight: 600;"></div>
+            </header>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+                <div class="glass" style="padding: 40px;">
+                    <h3>Analyze Meal</h3>
+                    <div style="border: 2px dashed var(--gold-glow); border-radius: 20px; padding: 60px; text-align: center; margin-top: 20px;">
+                        <input type="file" id="food-upload" hidden onchange="processFoodAI(this)">
+                        <label for="food-upload" style="cursor: pointer;">
+                            <img id="food-preview" style="max-width: 100%; border-radius: 15px; display: none; margin-bottom: 20px;">
+                            <p>Capture Photo to Detect Calories</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="glass" style="padding: 40px;">
+                    <h3>Daily Goal</h3>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <h2 style="font-size: 3rem;">1,420</h2>
+                        <p style="opacity: 0.6;">kcal remaining</p>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
