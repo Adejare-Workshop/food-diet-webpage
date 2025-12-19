@@ -1,38 +1,77 @@
-/* GLOBAL THEME: Burgundy (#800020), White (#FFFFFF), Gold (#D4AF37) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
 :root {
-    --burgundy: #800020;
-    --white: #ffffff;
+    --burgundy: #4a0404;
+    --burgundy-light: #800020;
     --gold: #d4af37;
-    --dark: #1a1a1a;
-    --glass: rgba(255, 255, 255, 0.95);
+    --gold-glow: rgba(212, 175, 55, 0.4);
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
 
-body { margin: 0; background-color: var(--white); color: var(--dark); line-height: 1.6; }
-
-/* SHARED LAYOUTS */
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-
-/* HEADERS & TEXT */
-h1, h2, h3 { color: var(--burgundy); text-transform: uppercase; letter-spacing: 1px; }
-.gold-text { color: var(--gold); font-weight: bold; }
-
-/* BUTTONS */
-.btn-gold { 
-    background: var(--gold); color: var(--burgundy); 
-    border: none; padding: 12px 25px; border-radius: 5px; 
-    font-weight: bold; cursor: pointer; transition: 0.3s;
+body { 
+    background: radial-gradient(circle at top right, #2d0202, #000); 
+    color: var(--white); 
+    min-height: 100vh;
+    overflow-x: hidden;
 }
-.btn-gold:hover { background: var(--burgundy); color: var(--gold); }
 
-/* AUTH PAGES (Login/Register) */
-.auth-bg { background: var(--burgundy); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-.auth-card { background: var(--white); padding: 40px; border-radius: 15px; border: 3px solid var(--gold); width: 400px; }
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a0101; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
 
-/* DASHBOARD CARDS */
-.card { background: var(--white); border: 1px solid var(--gold); border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+/* GLASSMORPHISM UTILITY */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
 
-/* PROGRESS BAR */
-.progress-bg { background: #eee; height: 12px; border-radius: 6px; overflow: hidden; }
-.progress-fill { background: var(--burgundy); height: 100%; transition: width 0.5s ease; }
+/* PREMIUM BUTTONS */
+.btn-premium {
+    background: linear-gradient(45deg, var(--gold), #f9e29c);
+    color: var(--burgundy);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-premium:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px var(--gold-glow);
+}
+
+/* DASHBOARD GRID */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: 100vh;
+}
+
+/* INPUTS */
+input, select, textarea {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input:focus { border-color: var(--gold); outline: none; }
