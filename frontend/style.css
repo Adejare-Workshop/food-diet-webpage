@@ -1,26 +1,31 @@
-/* style.css */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+.auth-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-input::placeholder, textarea::placeholder {
-    color: #6b7280;
+.auth-card input, .auth-card textarea, .auth-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: white;
+    border-radius: 8px;
 }
 
-/* Hide scrollbar but allow scrolling */
-body::-webkit-scrollbar {
-    display: none;
-}
-body {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-#profile-card, #workout-section {
-    transition: all 0.3s ease;
+.input-group {
+    display: flex;
+    gap: 10px;
 }
