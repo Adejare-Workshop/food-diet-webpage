@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <div class="card" id="workout-status">Loading Workout...</div>
+        
+        <div class="card">
+            <h3>Analyze Food</h3>
+            <input type="file" onchange="analyzeFoodImage(this.files[0])">
+            <p>Result: <span id="cal-result" class="gold-text">---</span></p>
+            <p>Portion Size: <span id="portion-status">---</span></p>
+        </div>
+        
+        <nav><a href="journey.html">View My Journey</a> | <a href="settings.html">Settings</a></nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
