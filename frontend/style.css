@@ -1,31 +1,78 @@
-.auth-page {
+/* Custom Theme for Adejare's Project */
+:root {
+    --burgundy: #800020;
+    --white: #ffffff;
+    --gold: #d4af37;
+    --dark-text: #333333;
+}
+
+body.auth-page {
+    background-color: var(--burgundy);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .auth-card {
-    background: var(--card-bg);
-    padding: 3rem;
-    border-radius: 20px;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     width: 100%;
-    max-width: 400px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 450px;
+    border: 2px solid var(--gold);
 }
 
-.auth-card input, .auth-card textarea, .auth-card select {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    background: #0f172a;
-    border: 1px solid #334155;
-    color: white;
-    border-radius: 8px;
+.gold-text {
+    color: var(--burgundy);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.input-group {
+.input-row {
     display: flex;
     gap: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.gold-btn {
+    background-color: var(--burgundy);
+    color: var(--white);
+    border: 2px solid var(--gold);
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.gold-btn:hover {
+    background-color: var(--gold);
+    color: var(--burgundy);
+}
+
+.small-link {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.small-link a {
+    color: var(--burgundy);
+    text-decoration: none;
+    font-weight: bold;
 }
