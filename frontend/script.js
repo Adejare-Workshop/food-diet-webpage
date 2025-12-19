@@ -94,7 +94,7 @@ async function handleFoodScan(event) {
     alert("Cal AI is analyzing your Nigerian dish...");
     
     // Replace URL with your actual Hugging Face Space URL
-    const HF_BACKEND = "https://your-space-name.hf.space/scan-food";
+    const HF_BACKEND = "https://adejareworkstudio-fitness-nigerian-app-backend.hf.space";
     
     const formData = new FormData();
     formData.append('file', file);
