@@ -1,78 +1,38 @@
-/* Custom Theme for Adejare's Project */
+/* GLOBAL THEME: Burgundy (#800020), White (#FFFFFF), Gold (#D4AF37) */
 :root {
     --burgundy: #800020;
     --white: #ffffff;
     --gold: #d4af37;
-    --dark-text: #333333;
+    --dark: #1a1a1a;
+    --glass: rgba(255, 255, 255, 0.95);
 }
 
-body.auth-page {
-    background-color: var(--burgundy);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-.auth-card {
-    background-color: var(--white);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    width: 100%;
-    max-width: 450px;
-    border: 2px solid var(--gold);
-}
+body { margin: 0; background-color: var(--white); color: var(--dark); line-height: 1.6; }
 
-.gold-text {
-    color: var(--burgundy);
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
+/* SHARED LAYOUTS */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-.input-row {
-    display: flex;
-    gap: 10px;
-}
+/* HEADERS & TEXT */
+h1, h2, h3 { color: var(--burgundy); text-transform: uppercase; letter-spacing: 1px; }
+.gold-text { color: var(--gold); font-weight: bold; }
 
-input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
+/* BUTTONS */
+.btn-gold { 
+    background: var(--gold); color: var(--burgundy); 
+    border: none; padding: 12px 25px; border-radius: 5px; 
+    font-weight: bold; cursor: pointer; transition: 0.3s;
 }
+.btn-gold:hover { background: var(--burgundy); color: var(--gold); }
 
-.gold-btn {
-    background-color: var(--burgundy);
-    color: var(--white);
-    border: 2px solid var(--gold);
-    padding: 12px;
-    width: 100%;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 15px;
-}
+/* AUTH PAGES (Login/Register) */
+.auth-bg { background: var(--burgundy); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.auth-card { background: var(--white); padding: 40px; border-radius: 15px; border: 3px solid var(--gold); width: 400px; }
 
-.gold-btn:hover {
-    background-color: var(--gold);
-    color: var(--burgundy);
-}
+/* DASHBOARD CARDS */
+.card { background: var(--white); border: 1px solid var(--gold); border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
 
-.small-link {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 15px;
-}
-
-.small-link a {
-    color: var(--burgundy);
-    text-decoration: none;
-    font-weight: bold;
-}
+/* PROGRESS BAR */
+.progress-bg { background: #eee; height: 12px; border-radius: 6px; overflow: hidden; }
+.progress-fill { background: var(--burgundy); height: 100%; transition: width 0.5s ease; }
