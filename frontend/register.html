@@ -1,15 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head><link rel="stylesheet" href="style.css"></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Begin Your Evolution | CAL AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body class="auth-bg">
-    <div class="auth-card">
-        <h2>Join Us</h2>
-        <input type="text" id="reg-user" placeholder="Username">
-        <input type="number" id="reg-weight" placeholder="Weight (kg)">
-        <input type="number" id="reg-height" placeholder="Height (cm)">
-        <textarea id="reg-medical" placeholder="Medical Notes"></textarea>
-        <button class="btn-gold" onclick="handleSignup()">CREATE ACCOUNT</button>
+    <div class="auth-card glass">
+        <h2 class="gold-text">Initialize Profile</h2>
+        <p style="margin-bottom: 25px; opacity: 0.7;">Establish your biological baseline for the AI.</p>
+        
+        <form id="registration-form">
+            <div class="input-group">
+                <input type="text" id="reg-user" placeholder="Create Username" required>
+                <input type="password" id="reg-pass" placeholder="Create Password" required>
+            </div>
+
+            <div style="display: flex; gap: 15px;">
+                <input type="number" id="reg-weight" placeholder="Weight (kg)" required>
+                <input type="number" id="reg-height" placeholder="Height (cm)" required>
+            </div>
+
+            <select id="reg-goal">
+                <option value="weight_reduction">Goal: Weight Reduction</option>
+                <option value="muscle_gain">Goal: Muscle Hypertrophy</option>
+                <option value="maintenance">Goal: Peak Maintenance</option>
+            </select>
+
+            <textarea id="reg-medical" placeholder="Medical Data (Allergies, conditions, or medications)" rows="3"></textarea>
+            
+            <button type="submit" class="btn-premium" style="width: 100%; justify-content: center;">
+                Generate My Plan
+            </button>
+        </form>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+            Already a member? <a href="login.html" style="color: var(--gold);">Login</a>
+        </p>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
