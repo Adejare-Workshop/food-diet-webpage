@@ -2,35 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Join Fitness AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Fitness AI - Adejare Works</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="auth-page">
     <div class="auth-card">
-        <h2>Create Your Profile</h2>
-        <p>Enter your details for personalized AI coaching.</p>
+        <h2 class="gold-text">Create Your Account</h2>
+        <p>Personalize your AI fitness journey below.</p>
         
         <form id="signup-form">
             <input type="text" id="username" placeholder="Username" required>
             <input type="password" id="password" placeholder="Password" required>
             
-            <div class="input-group">
+            <div class="input-row">
                 <input type="number" id="weight" placeholder="Weight (kg)" required>
                 <input type="number" id="height" placeholder="Height (cm)" required>
             </div>
 
-            <input type="number" id="age" placeholder="Age" required>
+            <div class="input-row">
+                <input type="number" id="age" placeholder="Age" required>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
             
+            <label for="goal">Fitness Goal:</label>
             <select id="goal">
                 <option value="weight_reduction">Weight Reduction</option>
                 <option value="maintenance">Maintenance</option>
                 <option value="muscle_gain">Muscle Gain</option>
             </select>
 
-            <textarea id="medical" placeholder="Medical Notes (Allergies, Conditions, etc.)"></textarea>
+            <textarea id="medical" placeholder="Medical Data (Allergies, conditions, or medications)" rows="3"></textarea>
             
-            <button type="submit">Begin My Journey</button>
+            <button type="submit" class="gold-btn">Create Account</button>
         </form>
+        <p class="small-link">Already have an account? <a href="login.html">Login here</a></p>
     </div>
+    <script src="auth.js"></script>
 </body>
 </html>
